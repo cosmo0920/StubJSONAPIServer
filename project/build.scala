@@ -18,7 +18,7 @@ object StubjsonapiserverBuild extends Build {
   lazy val project = Project (
     "stubjsonapiserver",
     file("."),
-    settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ Seq(
+    settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ com.earldouglas.xwp.XwpPlugin.jetty(port = 9292) ++ Seq(
       organization := Organization,
       name := Name,
       version := Version,
@@ -67,6 +67,6 @@ object StubjsonapiserverBuild extends Build {
           )
         )
       }
-    ) ++ com.earldouglas.xwp.XwpPlugin.jetty(port = 9292)
+    )
   )
 }
