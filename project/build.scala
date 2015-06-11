@@ -4,8 +4,7 @@ import org.scalatra.sbt._
 import org.scalatra.sbt.PluginKeys._
 import com.mojolly.scalate.ScalatePlugin._
 import ScalateKeys._
-import com.earldouglas.xsbtwebplugin.PluginKeys._
-import com.earldouglas.xsbtwebplugin.WebPlugin._
+import com.earldouglas.xwp.XwpPlugin._
 import sbtassembly.AssemblyPlugin._
 import sbtassembly.AssemblyKeys._
 
@@ -20,7 +19,6 @@ object StubjsonapiserverBuild extends Build {
     "stubjsonapiserver",
     file("."),
     settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ Seq(
-      port in container.Configuration := 9292,
       organization := Organization,
       name := Name,
       version := Version,
@@ -69,6 +67,6 @@ object StubjsonapiserverBuild extends Build {
           )
         )
       }
-    )
+    ) ++ com.earldouglas.xwp.XwpPlugin.jetty(port = 9292)
   )
 }
