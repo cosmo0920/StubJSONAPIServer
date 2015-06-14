@@ -11,7 +11,8 @@ trait LoadConfig {
 
 // For more on Specs2, see http://etorreborre.github.com/specs2/guide/org.specs2.guide.QuickStart.html
 class StubJSONAPIServerServletSpec extends ScalatraSpec
-    with LoadConfig { def is = s2"""
+    with LoadConfig {
+  def is = s2"""
   GET $appURI on StubJSONAPIServerServlet
     returns status 200           $root200
   """
