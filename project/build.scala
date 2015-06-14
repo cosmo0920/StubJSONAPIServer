@@ -7,6 +7,7 @@ import ScalateKeys._
 import com.earldouglas.xwp.XwpPlugin._
 import sbtassembly.AssemblyPlugin._
 import sbtassembly.AssemblyKeys._
+import com.typesafe.sbt.SbtScalariform.scalariformSettings
 
 object StubjsonapiserverBuild extends Build {
   val Organization = "net.cosmo0920"
@@ -18,7 +19,7 @@ object StubjsonapiserverBuild extends Build {
   lazy val project = Project (
     "stubjsonapiserver",
     file("."),
-    settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ com.earldouglas.xwp.XwpPlugin.jetty(port = 9292) ++ Seq(
+    settings = ScalatraPlugin.scalatraWithJRebel ++ scalateSettings ++ com.earldouglas.xwp.XwpPlugin.jetty(port = 9292) ++ scalariformSettings ++ Seq(
       organization := Organization,
       name := Name,
       version := Version,

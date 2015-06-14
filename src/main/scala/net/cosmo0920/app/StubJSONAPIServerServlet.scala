@@ -2,7 +2,7 @@ package net.cosmo0920.app
 
 import org.scalatra._
 import scalate.ScalateSupport
-import org.json4s.{DefaultFormats, Formats}
+import org.json4s.{ DefaultFormats, Formats }
 import org.scalatra.json._
 import com.typesafe.config._
 
@@ -17,8 +17,7 @@ object StubConfig {
 }
 
 class StubJSONAPIServerServlet extends StubjsonapiserverStack
-    with JacksonJsonSupport
-{
+    with JacksonJsonSupport {
   import StubConfig._
   val applicationConfig = ConfigFactory.load()
   val confURI = applicationConfig.getOptionalString("default.route")
@@ -34,7 +33,7 @@ class StubJSONAPIServerServlet extends StubjsonapiserverStack
     val confResponse = applicationConfig.getOptionalString("default.response")
     confResponse match {
       case Some(r) => r
-      case None    => "[]"
+      case None => "[]"
     }
   }
 
