@@ -36,7 +36,7 @@ object StubjsonapiserverBuild extends Build {
         "javax.servlet" % "javax.servlet-api" % "3.1.0",
         "org.scalatra" %% "scalatra-json" % "2.3.0",
         "org.json4s"   %% "json4s-jackson" % "3.2.9",
-        "com.typesafe" % "config" % "1.2.1",
+        "com.typesafe" % "config" % "1.3.0",
         "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" %     "container;provided;test" artifacts (Artifact("javax.servlet", "jar", "jar"))
       ),
       // ignore about.html in jars (needed for sbt-assembly)
